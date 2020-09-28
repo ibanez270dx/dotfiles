@@ -8,9 +8,9 @@ alias c="clear"
 alias h="history"
 alias l="ls -alhFG"
 
-alias ip="ifconfig | grep \"inet \" | grep -v 127.0.0.1 | cut -d\  -f2"  # local IP
-alias isp="wget -qO- http://checkip.amazonaws.com"                       # external IP
-alias isp2="dig +short myip.opendns.com @resolver1.opendns.com"          # ...also external IP
+alias ip="ifconfig | grep \"inet \" | grep -v 127.0.0.1 | cut -d\  -f2"                         # local IPv4 address
+alias isp="curl http://checkip.amazonaws.com"                                                   # external IPv4 address
+alias isp6="dig TXT +short o-o.myaddr.l.google.com @ns1.google.com | awk -F'\"' '{ print $2}'"  # external IPv6 address
 
 alias hosts="sudo $EDITOR /etc/hosts"  # edit hosts file
 alias sshc="$EDITOR ~/.ssh/config"     # edit SSH config
@@ -27,7 +27,7 @@ alias ngrok=". ~/Dev/ngrok"                      # start NGROK
 alias server="python -m SimpleHTTPServer 8080"   # start a quick HTTP server in cwd
 alias reload="source ~/.bash_profile"            # re-source shell
 alias rs0="rails server -b 0.0.0.0"              # start rails and allow network devices to access
-alias puma-pid="ps aux | grep puma | grep tcp | awk '{print $2}'"
+alias puma-pid="ps aux | grep puma | grep tcp | awk '{print $2}'"  # print puma server's pid
 
 # Shortcuts
 alias dev="cd ~/Dev"
