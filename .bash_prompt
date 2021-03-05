@@ -39,7 +39,8 @@ ps1_git() {
   case "${branch:-"(no branch)"}" in
    production|prod) attr="1;37m\033[" ; color=41 ;; # red
    master|deploy)   color=31                     ;; # red
-   stage|staging)   color=33                     ;; # yellow
+   release-*)       attr="1;37m\033[" ; color=36 ;; # bold cyan
+   verify)          color=33                     ;; # yellow
    dev|development) color=34                     ;; # blue
    next)            color=36                     ;; # gray
    *)
