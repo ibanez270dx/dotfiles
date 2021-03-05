@@ -18,6 +18,8 @@ alias sshc="$EDITOR ~/.ssh/config"     # edit SSH config
 alias users="dscl . list /Users | grep -v '^_'"  # list all users
 alias reindex-spotlight="sudo mdutil -E /"       # ...when all of a sudden I can't even find Chrome :/
 
+alias gopen="hub browse"
+
 ##################################################
 # Development
 ##################################################
