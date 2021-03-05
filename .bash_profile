@@ -8,7 +8,7 @@ export EDITOR=vi
 export DOTFILES=/Users/jeff/.dotfiles
 export NVM_DIR="$HOME/.nvm"
 export ANDROID_SDK_ROOT="/usr/local/share/android-sdk"
-export PATH="~/bin:$PATH"
+export PATH="~/bin:/Users/jeff/Library/Python/3.9/bin:$PATH"
 export SPELLCHECKER_PREFER_HUNSPELL=1
 export RUBYOPT='-W0'
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"

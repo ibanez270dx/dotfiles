@@ -26,14 +26,16 @@ function lint {
 
   case ${scope} in
     "changes" | "changed" | "c" | "unstaged" | "st")
+      echo "${cmd} $(changed_files)"
       bundle exec ${cmd} $(changed_files)
       ;;
     "branch" | "br" | "commits" | "co")
+      echo "${cmd} $(branch_files)"
       bundle exec ${cmd} $(branch_files)
       ;;
     *)
-    echo "can't find function \`${scope}\`"
-    ;;
+      echo "can't find function \`${scope}\`"
+      ;;
   esac
 }
 
@@ -59,9 +61,9 @@ function sk {
 # Backup a table. Defaults to *_backup,
 # pass additional argument for *_whatever.
 function backup_table {
-    local t1=${1}
-    local t2=${1}_${2:-backup}
-    rails db << EOF
+  local t1=${1}
+  local t2=${1}_${2:-backup}
+  rails db << EOF
     drop table if exists $t2;
     create table $t2 like $t1;
     insert into $t2 select * from $t1;
@@ -110,12 +112,12 @@ function copy-chrome-extension {
     if [ ! -d "${HOME}/Dev/ChromeExtensions/${name}" ]; then
       mkdir -p ${HOME}/Dev/ChromeExtensions/${name}
       printf "\nCopying ${1} into ~/dev/ChromeExtensions/${name} ... "
-      cp -r "${HOME}/Library/Application\ Support/Google/Chrome/Default/Extensions/${1}" "${HOME}/Dev/ChromeExtensions/${name}"
+      cp -r "${HOME}/Library/Application Support/Google/Chrome/Default/Extensions/${1}" "${HOME}/Dev/ChromeExtensions/${name}"
       printf "done!\n"
     else
       printf "\n~/dev/ChromeExtensions/${name} already exists! Either remove it or specify another name for the destination folder.\n"
     fi
- fi
+  fi
 }
 
 #################################################
@@ -153,8 +155,8 @@ _cht_complete() {
   opts="$(curl -s cheat.sh/:list)"
 
   if [ ${COMP_CWORD} = 1 ]; then
-  COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
-  __ltrim_colon_completions "$cur"
+    COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
+    __ltrim_colon_completions "$cur"
   fi
   return 0
 }
