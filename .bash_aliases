@@ -18,36 +18,24 @@ alias sshc="$EDITOR ~/.ssh/config"     # edit SSH config
 alias users="dscl . list /Users | grep -v '^_'"  # list all users
 alias reindex-spotlight="sudo mdutil -E /"       # ...when all of a sudden I can't even find Chrome :/
 
-alias gopen="hub browse"
+alias gopen="hub browse"  # open github repo in default browser
 
 ##################################################
 # Development
 ##################################################
 
-alias be="bundle exec"                           # bundler
-alias ngrok=". ~/Dev/ngrok"                      # start NGROK
+alias be="bundle exec"                           # execute with bundler
 alias server="python -m SimpleHTTPServer 8080"   # start a quick HTTP server in cwd
-alias reload="source ~/.bash_profile"            # re-source shell
-alias rs0="rails server -b 0.0.0.0"              # start rails and allow network devices to access
-alias puma-pid="ps aux | grep puma | grep tcp | awk '{print $2}'"  # print puma server's pid
 
 # Shortcuts
 alias dev="cd ~/Dev"
-alias hu="cd ~/Dev/humani.se"
 alias dotfiles="cd $DOTFILES"
-
-# Cognoa
-alias cog="cd ~/Dev/cognoa"
-alias cog:ios="cd ~/Dev/cognoa-ios"
-alias cog:xcode="open ~/Dev/cognoa-ios/Cognoa/Cognoa.xcworkspace"
-
-# Aurify
-alias au="cd ~/Dev/aurify"
-alias au:rebuild="heroku builds:create --source-url https://api.github.com/repos/ibanez270dx/aurify/tarball/master?access_token=$AURIFY_GITHUB_ACCESS_TOKEN --app aurify"
 
 ##################################################
 # Dotfiles
 ##################################################
+
+alias reload="source ~/.bash_profile"      # Re-source shell
 
 alias va="cat $DOTFILES/.bash_aliases"     # View Aliases
 alias vf="cat $DOTFILES/.bash_functions"   # View Functions
