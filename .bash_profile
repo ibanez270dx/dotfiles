@@ -19,11 +19,12 @@ source $DOTFILES/.bash_colors
 source $DOTFILES/.bash_prompt
 source $DOTFILES/.bash_functions
 source $DOTFILES/.bash_aliases
+source $DOTFILES/lib/bash-wakatime.sh
 
 # Node Version Manager
 export NVM_DIR="$HOME/.nvm"
-  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # initialize NVM
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # NVM bash_completion
 
 # Ruby Version Manager
 if which rbenv > /dev/null; then
