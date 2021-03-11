@@ -1,5 +1,52 @@
 #!/bin/bash
 
+# run a command for all changes using the functions above
+function cog {
+  if [ -z "$1" ]; then
+    cd ~/Dev/cognoa
+  else
+    case ${1} in
+      "ios")
+        cd ~/Dev/cognoa-ios || return
+        ;;
+      "android")
+        cd ~/Dev/cognoa-android || return
+        ;;
+      "ruby_extract_spec" | "ruby-extract-spec" | "res" | "extractspec")
+        cd ~/Dev/ruby_extract_spec || return
+        ;;
+      "main-api-tests" | "api-tests")
+        cd ~/Dev/main-api-tests || return
+        ;;
+      "ops")
+        cd ~/Dev/cognoa-ops || return
+        ;;
+      "mac-tools" | "tools")
+        cd ~/Dev/cognoa-mac-tools || return
+        ;;
+      "jquery-query-builder-rails" | "condition-builder" | "query-builder")
+        cd ~/Dev/jquery_query_builder-rails || return
+        ;;
+      "blackbox-api-tests" | "blackbox-tests" | "bb-tests")
+        cd ~/Dev/blackbox-api-tests || return
+        ;;
+      *)
+        echo -e "      OPTIONS:"
+        echo -e "\tserver\t\t\t\t\t\t\tmove to cognoa repo"
+        echo -e "\tios\t\t\t\t\t\t\tmove to cognoa-ios repo"
+        echo -e "\tandroid\t\t\t\t\t\t\tmove to cognoa-android repo"
+        echo -e "\tios\t\t\t\t\t\t\tmove to cognoa-ops repo"
+        echo -e "\tmac-tools\t\t\t\t\t\tmove to cognoa-mac-tools repo"
+        echo -e "\truby-extract-spec | res | extractspec\t\t\tmove to ruby_extract_spec repo"
+        echo -e "\tmain-api-test | api-test\t\t\t\tmove to main-api-tests repo"
+        echo -e "\tblackbox-api-tests | blackbox-tests | bb-tests\t\tmove to blackbox-api-tests repo"
+        echo -e "\tcondition-builder | query-builder\t\t\tmove to jquery_query_builder-rails repo"
+        ;;
+    esac
+  fi
+}
+
+
 #################################################
 # Diff helpers
 #################################################
