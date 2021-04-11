@@ -7,6 +7,8 @@
 export EDITOR=vi
 export DOTFILES=/Users/gianna/.dotfiles
 export RUBYOPT='-W0'
+export BASH_SILENCE_DEPRECATION_WARNING=1
+export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 
 # force Ruby to use brew's version of openssl
 openssl_dir=$(brew --prefix openssl)
