@@ -6,7 +6,8 @@
 
 alias c="clear"
 alias h="history"
-alias l="ls -alhFG"
+alias ls="ls -alhFG"
+alias l="ls"
 
 alias ip="ifconfig | grep \"inet \" | grep -v 127.0.0.1 | cut -d\  -f2"                         # local IPv4 address
 alias isp="curl http://checkip.amazonaws.com"                                                   # external IPv4 address
