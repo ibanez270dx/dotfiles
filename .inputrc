@@ -15,13 +15,33 @@
 
 # Set Readline options
 # https://www.gnu.org/software/bash/manual/html_node/Readline-Init-File-Syntax.html
-set bell-style visible            # SHUT. THE HELL. UP.
-set colored-completion-prefix on  # Displays the common prefix of the set of possible completions using a different color from LS_COLORS.
-set colored-stats on              # Displays possible completions using colors from LS_COLORS to indicate their file type.
-set completion-ignore-case On     # Ignore case when using tab completion
-set convert-meta off              # Turns off 8th bit stripping
-set expand-tilde on               # Use tilde expansion (https://www.gnu.org/software/bash/manual/html_node/Tilde-Expansion.html)
-set input-meta on                 # Enable 8bit input
-set output-meta on                # Keep the 8th bit for display
-set show-all-if-ambiguous on      # Completions with more than one possibility are listed immediately (no double tapping tab)
-set visible-stats on              # A character denoting a file's type is appended to the filename when listing possible completions.
+
+# SHUT. THE HELL. UP.
+set bell-style visible
+
+# Displays the common prefix of the set of possible completions using a different color from LS_COLORS.
+set colored-completion-prefix on
+
+# Displays possible completions using colors from LS_COLORS to indicate their file type.
+set colored-stats on
+
+# Ignore case when using tab completion
+set completion-ignore-case On
+
+# Turns off 8th bit stripping
+set convert-meta off
+
+# Use tilde expansion (https://www.gnu.org/software/bash/manual/html_node/Tilde-Expansion.html)
+set expand-tilde on
+
+# Enable 8bit input
+set input-meta on
+
+# Keep the 8th bit for display
+set output-meta on
+
+# Completions with more than one possibility are listed immediately (no double tapping tab)
+set show-all-if-ambiguous on
+
+# A character denoting a file's type is appended to the filename when listing possible completions.
+set visible-stats on
