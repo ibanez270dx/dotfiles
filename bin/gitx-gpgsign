@@ -1,4 +1,6 @@
-#!/usr/bin/env bash
+#!/bin/bash
+# allows signing commits made through gitx
+# https://josh.fail/blog/2019/signed-commits-with-gitx.html
 
 args=("$@")
 
