@@ -20,20 +20,19 @@ source $DOTFILES/.bash_aliases
 
 # Internal libs
 source $DOTFILES/lib/git-completion                   # Git Completion
-source $DOTFILES/lib/autoswitch-nvmrc                 # Auto-switch nodeJS version based on rmvrc like rbenv
 source $DOTFILES/lib/.iterm2_shell_integration.bash   # iTerm2 integration
-
-# Bash Completion
-if [ -f "$(brew --prefix)/etc/bash_completion" ]; then
-  . "$(brew --prefix)/etc/bash_completion"
-  complete -o default -F _git g
-fi
 
 # Ruby Version Manager
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # Python Version Manager
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+
+# Bash Completion
+if [ -f "$(brew --prefix)/etc/bash_completion" ]; then
+  . "$(brew --prefix)/etc/bash_completion"
+  complete -o default -F _git g
+fi
 
 # End Message
 printf "${RED}reloaded shell${NO_COLOR}\n";
