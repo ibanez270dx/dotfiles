@@ -5,21 +5,18 @@
 
 # Environment Variables
 export EDITOR=vi
-export DOTFILES=/Users/gianna/.dotfiles
-export RUBYOPT='-W0'
+export DOTFILES=$HOME/.dotfiles
 export BASH_SILENCE_DEPRECATION_WARNING=1
-export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
-
-# force Ruby to use brew's version of openssl
-openssl_dir=$(brew --prefix openssl)
-export RUBY_CONFIGURE_OPTS="--with-openssl-dir=${openssl_dir}"
+export RUBYOPT='-W0'
+export OPENSSL_DIR=$(brew --prefix openssl)
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=${OPENSSL_DIR}"
+export PATH="$DOTFILES/bin:${OPENSSL_DIR}/bin:$PATH"
 
 # Custom Prompt and Helpers
 source $DOTFILES/.bash_colors
 source $DOTFILES/.bash_prompt
 source $DOTFILES/.bash_functions
 source $DOTFILES/.bash_aliases
-# source $DOTFILES/lib/bash-wakatime.sh
 
 # Internal libs
 source $DOTFILES/lib/git-completion                   # Git Completion
@@ -31,10 +28,6 @@ if [ -f "$(brew --prefix)/etc/bash_completion" ]; then
   . "$(brew --prefix)/etc/bash_completion"
   complete -o default -F _git g
 fi
-
-# Node Version Manager
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"                                        # initialize NVM
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # NVM completion
 
 # Ruby Version Manager
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
