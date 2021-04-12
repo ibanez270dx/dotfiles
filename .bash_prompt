@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 ##################################################
 # Bash Prompt
@@ -59,7 +59,7 @@ ps1_git() {
 
 ps1_gituser() {
   gituser=$(git config user.email)
-  if [[ "${gituser}" != "jeff@humani.se" ]]; then
+  if [[ "${gituser}" != "gianna@gianna.codes" ]]; then
     echo -e "\[\033[33m\]as ${gituser}\[\033[0m\] "
   fi
 }
